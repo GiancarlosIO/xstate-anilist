@@ -1,0 +1,1 @@
+A simple app to search animes built with typescript, graphql, react and xstate
