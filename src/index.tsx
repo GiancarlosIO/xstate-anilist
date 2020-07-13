@@ -9,10 +9,13 @@ import { ApolloProvider } from 'react-apollo';
 
 import './tailwind.css';
 
+import App from './App';
+
+// graphiql: https://anilist.co/graphiql
 const cache = new InMemoryCache();
 const httpLink = createHttpLink({
-  uri: 'https://anilist.co/graphiql/',
-  credentials: 'include',
+  uri: 'https://graphql.anilist.co/',
+  credentials: 'omit',
 });
 
 const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
@@ -45,12 +48,6 @@ const client = new ApolloClient({
   cache,
   link: ApolloLink.from(links),
 });
-
-const App = () => (
-  <div>
-    <h1>Hello world!! </h1>
-  </div>
-);
 
 // https://anilist.co/search/anime
 
