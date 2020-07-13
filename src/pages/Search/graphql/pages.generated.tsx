@@ -1,5 +1,5 @@
 /* eslint-disable */
-import * as Types from '../generated/types';
+import * as Types from '../../../generated/types';
 
 import gql from 'graphql-tag';
 import * as ApolloReactCommon from '@apollo/client';

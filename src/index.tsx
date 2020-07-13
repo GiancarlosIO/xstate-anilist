@@ -6,6 +6,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
 import { ApolloProvider } from 'react-apollo';
+import { BrowserRouter } from 'react-router-dom';
 
 import './tailwind.css';
 
@@ -54,7 +55,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>,
   document.querySelector('#rootApp'),
