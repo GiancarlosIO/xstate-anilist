@@ -7,6 +7,14 @@ const Header = () => {
     <div>
       <ul>
         <li>
+          <img
+            src="https://anilist.co/img/icons/icon.svg"
+            alt="Anilist"
+            width="50"
+            height="50"
+          />
+        </li>
+        <li>
           <Link to="/search"> Browse</Link>
         </li>
       </ul>
