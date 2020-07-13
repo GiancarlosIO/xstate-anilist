@@ -7,20 +7,22 @@ import Search from './pages/Search';
 
 const App = () => {
   return (
-    <div className="container mx-auto">
+    <>
       <Header />
-      <Switch>
-        <Route path="/" exact>
-          <div>HOMEPAGE</div>
-        </Route>
-        <Route path="/search">
-          <Search />
-        </Route>
-        <Route>
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </div>
+      <div className="pt-16 container mx-auto bg-blue-200 min-h-screen">
+        <Switch>
+          <Route path="/" exact>
+            <div>HOMEPAGE</div>
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route>
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </div>
+    </>
   );
 };
 
