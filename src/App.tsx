@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="pt-24 container mx-auto min-h-screen">
+      <div className="relative pt-4 container mx-auto min-h-screen">
         <Switch>
           <Route path="/" exact>
             <div>HOMEPAGE</div>
