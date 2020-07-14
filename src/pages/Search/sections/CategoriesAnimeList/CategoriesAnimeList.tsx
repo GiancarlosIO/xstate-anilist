@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { FulfillingBouncingCircleSpinner } from 'react-epic-spinners';
 
 import AnimeCard from '../../components/AnimeCard';
@@ -22,14 +23,21 @@ type AnimeListKeys = keyof AnimesQueryVariables;
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   grid-gap: 25px 14px;
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 475px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 `;
 
-const AnimeList = () => {
+const CategoriesAnimeList = () => {
   const { data, loading, error, refetch } = useAnimesQuery();
-
-  console.log({ data, loading, error });
 
   if (loading) {
     return (
@@ -53,6 +61,8 @@ const AnimeList = () => {
       </div>
     );
   }
+
+  console.log('AnimeList');
 
   return (
     <div>
@@ -78,4 +88,4 @@ const AnimeList = () => {
   );
 };
 
-export default AnimeList;
+export default CategoriesAnimeList;
