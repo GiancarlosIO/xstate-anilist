@@ -2,8 +2,8 @@
 import * as Types from '../../../generated/types';
 
 import gql from 'graphql-tag';
-import * as ApolloReactCommon from '@apollo/client';
-import * as ApolloReactHooks from '@apollo/client';
+import * as ApolloReactCommon from 'react-apollo';
+import * as ApolloReactHooks from 'react-apollo';
 
 export type SearchQueryVariables = Types.Exact<{
   page?: Types.Maybe<Types.Scalars['Int']>;
@@ -161,6 +161,9 @@ export function useSearchLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookO
 export type SearchQueryHookResult = ReturnType<typeof useSearchQuery>;
 export type SearchLazyQueryHookResult = ReturnType<typeof useSearchLazyQuery>;
 export type SearchQueryResult = ApolloReactCommon.QueryResult<SearchQuery, SearchQueryVariables>;
+export function refetchSearchQuery(variables?: SearchQueryVariables) {
+      return { query: SearchDocument, variables: variables }
+    }
 
       export interface IntrospectionResultData {
         __schema: {

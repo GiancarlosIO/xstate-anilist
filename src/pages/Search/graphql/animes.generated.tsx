@@ -2,8 +2,8 @@
 import * as Types from '../../../generated/types';
 
 import gql from 'graphql-tag';
-import * as ApolloReactCommon from '@apollo/client';
-import * as ApolloReactHooks from '@apollo/client';
+import * as ApolloReactCommon from 'react-apollo';
+import * as ApolloReactHooks from 'react-apollo';
 
 export type AnimesQueryVariables = Types.Exact<{
   season?: Types.Maybe<Types.MediaSeason>;
@@ -145,6 +145,9 @@ export function useAnimesLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookO
 export type AnimesQueryHookResult = ReturnType<typeof useAnimesQuery>;
 export type AnimesLazyQueryHookResult = ReturnType<typeof useAnimesLazyQuery>;
 export type AnimesQueryResult = ApolloReactCommon.QueryResult<AnimesQuery, AnimesQueryVariables>;
+export function refetchAnimesQuery(variables?: AnimesQueryVariables) {
+      return { query: AnimesDocument, variables: variables }
+    }
 
       export interface IntrospectionResultData {
         __schema: {

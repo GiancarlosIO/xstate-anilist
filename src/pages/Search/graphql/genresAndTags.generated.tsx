@@ -2,8 +2,8 @@
 import * as Types from '../../../generated/types';
 
 import gql from 'graphql-tag';
-import * as ApolloReactCommon from '@apollo/client';
-import * as ApolloReactHooks from '@apollo/client';
+import * as ApolloReactCommon from 'react-apollo';
+import * as ApolloReactHooks from 'react-apollo';
 
 export type GenresAndTagsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
@@ -47,6 +47,9 @@ export function useGenresAndTagsLazyQuery(baseOptions?: ApolloReactHooks.LazyQue
 export type GenresAndTagsQueryHookResult = ReturnType<typeof useGenresAndTagsQuery>;
 export type GenresAndTagsLazyQueryHookResult = ReturnType<typeof useGenresAndTagsLazyQuery>;
 export type GenresAndTagsQueryResult = ApolloReactCommon.QueryResult<GenresAndTagsQuery, GenresAndTagsQueryVariables>;
+export function refetchGenresAndTagsQuery(variables?: GenresAndTagsQueryVariables) {
+      return { query: GenresAndTagsDocument, variables: variables }
+    }
 
       export interface IntrospectionResultData {
         __schema: {

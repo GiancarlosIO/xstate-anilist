@@ -21,6 +21,9 @@ generates:
       reactApolloVersion: 3
       withMutationFn: false
       preResolveTypes: true
+      withRefetchFn: true
+      apolloReactCommonImportFrom: "react-apollo"
+      apolloReactHooksImportFrom: "react-apollo"
   ./graphql.schema.json:
     plugins:
       - "introspection"

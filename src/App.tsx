@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="pt-16 container mx-auto bg-blue-200 min-h-screen">
+      <div className="pt-24 container mx-auto min-h-screen">
         <Switch>
           <Route path="/" exact>
             <div>HOMEPAGE</div>
