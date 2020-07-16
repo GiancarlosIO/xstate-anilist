@@ -37,7 +37,14 @@ const CardContainer = styled.div`
 `;
 
 const CategoriesAnimeList = () => {
-  const { data, loading, error, refetch } = useAnimesQuery();
+  const { data, loading, error, refetch } = useAnimesQuery({
+    variables: {
+      nextSeason: 'FALL',
+      nextYear: 2020,
+      season: 'SUMMER',
+      seasonYear: 2020,
+    },
+  });
 
   if (loading) {
     return (
@@ -61,8 +68,6 @@ const CategoriesAnimeList = () => {
       </div>
     );
   }
-
-  console.log('AnimeList');
 
   return (
     <div>

@@ -1,15 +1,19 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Interpreter } from 'xstate';
 
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import Clear from '@material-ui/icons/Clear';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Chip from '@material-ui/core/Chip';
 import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
-import { Events, Context } from '../../machine';
+import { Events, Context, EVENT_TYPE } from '../../machine';
 
 import { filters } from './filters-data';
 
@@ -23,53 +27,44 @@ const Filters: FC<{
   filterSelected: Context;
   sendEvent: Interpreter<Context, any, Events>['send'];
 }> = ({ filterSelected, sendEvent }) => {
-  const onChangeSelect = filterKey => event => {
-    sendEvent({
-      type: `SET_${filterKey.toUpperCase()}`,
-      value: event.target.value,
-    });
+  const onChangeFilter = filterKey => (_, value) => {
+    if (filterKey === 'format') {
+      sendEvent({
+        type: EVENT_TYPE.SET_FORMAT,
+        value,
+      });
+    } else {
+      sendEvent({
+        type: `SET_${filterKey.toUpperCase()}` as EVENT_TYPE,
+        value,
+      });
+    }
   };
-
-  console.log({ filterSelected });
 
   return (
     <Container className="h-auto w-full ">
       {filters.map(filter => {
+        const isFormatFilter = filter.key === 'format';
+
         return (
-          filter.values && (
-            <FormControl key={filter.key}>
-              <FormHelperText>{filter.label}</FormHelperText>
-              <Select
-                onChange={onChangeSelect(filter.key)}
-                labelId="key"
-                value={filterSelected[filter.key] || ''}
-                IconComponent={
-                  filterSelected[filter.key]
-                    ? () => {
-                        return (
-                          <Clear
-                            onClick={event => {
-                              event.preventDefault();
-                              // TODO!!
-                              console.log('clear');
-                            }}
-                          />
-                        );
-                      }
-                    : ArrowDropDownIcon
-                }
-              >
-                <MenuItem value={undefined} />
-                {filter.values.map(filterItem => {
-                  return (
-                    <MenuItem key={filterItem.value} value={filterItem.value}>
-                      {filterItem.label}
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
-          )
+          <Autocomplete
+            key={filter.key}
+            multiple={isFormatFilter}
+            options={filter.values}
+            getOptionLabel={option => option.label}
+            defaultValue={isFormatFilter ? [] : undefined}
+            filterSelectedOptions
+            renderInput={params => (
+              <TextField
+                {...params}
+                variant="outlined"
+                label={filter.label}
+                placeholder=""
+              />
+            )}
+            value={filterSelected[filter.key]}
+            onChange={onChangeFilter(filter.key)}
+          />
         );
       })}
     </Container>

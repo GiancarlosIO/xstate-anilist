@@ -32,12 +32,14 @@ const SearchResults: FC<{ filterSelected: Context }> = ({ filterSelected }) => {
   const { data, loading, error, refetch } = useSearchQuery({
     variables: {
       type: MediaType.Anime,
-      ...filterSelected,
       // TODO: Converte format filter to multiselect
-      format: filterSelected.format
-        ? [filterSelected.format as MediaFormat]
-        : undefined,
-      year: filterSelected.year ? `${filterSelected.year}%` : undefined,
+      format:
+        filterSelected.format.length > 0
+          ? filterSelected.format.map(f => f.value)
+          : undefined,
+      year: filterSelected.year ? `${filterSelected.year.value}%` : undefined,
+      genres: filterSelected.genres?.value,
+      season: filterSelected.season?.value,
     },
   });
 

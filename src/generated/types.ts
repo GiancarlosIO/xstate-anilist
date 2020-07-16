@@ -100,7 +100,6 @@ export type ActivityReply = {
   likes?: Maybe<Array<Maybe<User>>>;
 };
 
-
 /** Replay to an activity item */
 export type ActivityReplyTextArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
@@ -172,7 +171,7 @@ export type ActivityReplySubscribedNotification = {
 /** Activity sort enums */
 export enum ActivitySort {
   Id = 'ID',
-  IdDesc = 'ID_DESC'
+  IdDesc = 'ID_DESC',
 }
 
 /** Activity type enum. */
@@ -186,7 +185,7 @@ export enum ActivityType {
   /** A text message activity sent to another user */
   Message = 'MESSAGE',
   /** Anime & Manga list update, only used in query arguments */
-  MediaList = 'MEDIA_LIST'
+  MediaList = 'MEDIA_LIST',
 }
 
 /** Activity union type */
@@ -270,7 +269,7 @@ export enum AiringSort {
   Time = 'TIME',
   TimeDesc = 'TIME_DESC',
   Episode = 'EPISODE',
-  EpisodeDesc = 'EPISODE_DESC'
+  EpisodeDesc = 'EPISODE_DESC',
 }
 
 export type AniChartHighlightInput = {
@@ -310,12 +309,10 @@ export type Character = {
   modNotes?: Maybe<Scalars['String']>;
 };
 
-
 /** A character that features in an anime or manga */
 export type CharacterDescriptionArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
 };
-
 
 /** A character that features in an anime or manga */
 export type CharacterMediaArgs = {
@@ -348,7 +345,6 @@ export type CharacterEdge = {
   /** The order the character should be displayed from the users favourites */
   favouriteOrder?: Maybe<Scalars['Int']>;
 };
-
 
 /** Character connection edge */
 export type CharacterEdgeVoiceActorsArgs = {
@@ -398,7 +394,7 @@ export enum CharacterRole {
   /** A supporting character role in the media */
   Supporting = 'SUPPORTING',
   /** A background character in the media */
-  Background = 'BACKGROUND'
+  Background = 'BACKGROUND',
 }
 
 /** Character sort enums */
@@ -409,7 +405,7 @@ export enum CharacterSort {
   RoleDesc = 'ROLE_DESC',
   SearchMatch = 'SEARCH_MATCH',
   Favourites = 'FAVOURITES',
-  FavouritesDesc = 'FAVOURITES_DESC'
+  FavouritesDesc = 'FAVOURITES_DESC',
 }
 
 /** A submission for a character that features in an anime or manga */
@@ -451,7 +447,6 @@ export type CharacterSubmissionEdge = {
   submittedVoiceActors?: Maybe<Array<Maybe<StaffSubmission>>>;
 };
 
-
 /** Deleted data type */
 export type Deleted = {
   __typename?: 'Deleted';
@@ -474,13 +469,11 @@ export type Favourites = {
   studios?: Maybe<StudioConnection>;
 };
 
-
 /** User's favourite anime, manga, characters, staff & studios */
 export type FavouritesAnimeArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 /** User's favourite anime, manga, characters, staff & studios */
 export type FavouritesMangaArgs = {
@@ -488,20 +481,17 @@ export type FavouritesMangaArgs = {
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 /** User's favourite anime, manga, characters, staff & studios */
 export type FavouritesCharactersArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 /** User's favourite anime, manga, characters, staff & studios */
 export type FavouritesStaffArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 /** User's favourite anime, manga, characters, staff & studios */
 export type FavouritesStudiosArgs = {
@@ -554,7 +544,6 @@ export type FuzzyDateInput = {
   day?: Maybe<Scalars['Int']>;
 };
 
-
 /** User's genre statistics */
 export type GenreStats = {
   __typename?: 'GenreStats';
@@ -596,7 +585,6 @@ export type InternalPage = {
   likes?: Maybe<Array<Maybe<User>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageMediaSubmissionsArgs = {
   mediaId?: Maybe<Scalars['Int']>;
@@ -607,7 +595,6 @@ export type InternalPageMediaSubmissionsArgs = {
   sort?: Maybe<Array<Maybe<SubmissionSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageCharacterSubmissionsArgs = {
   characterId?: Maybe<Scalars['Int']>;
@@ -616,7 +603,6 @@ export type InternalPageCharacterSubmissionsArgs = {
   sort?: Maybe<Array<Maybe<SubmissionSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageStaffSubmissionsArgs = {
   staffId?: Maybe<Scalars['Int']>;
@@ -624,7 +610,6 @@ export type InternalPageStaffSubmissionsArgs = {
   status?: Maybe<SubmissionStatus>;
   sort?: Maybe<Array<Maybe<SubmissionSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageRevisionHistoryArgs = {
@@ -635,13 +620,11 @@ export type InternalPageRevisionHistoryArgs = {
   studioId?: Maybe<Scalars['Int']>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageModActionsArgs = {
   userId?: Maybe<Scalars['Int']>;
   modId?: Maybe<Scalars['Int']>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageUsersArgs = {
@@ -650,7 +633,6 @@ export type InternalPageUsersArgs = {
   search?: Maybe<Scalars['String']>;
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageMediaArgs = {
@@ -722,7 +704,6 @@ export type InternalPageMediaArgs = {
   sort?: Maybe<Array<Maybe<MediaSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageCharactersArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -732,7 +713,6 @@ export type InternalPageCharactersArgs = {
   id_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   sort?: Maybe<Array<Maybe<CharacterSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageStaffArgs = {
@@ -744,7 +724,6 @@ export type InternalPageStaffArgs = {
   sort?: Maybe<Array<Maybe<StaffSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageStudiosArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -754,7 +733,6 @@ export type InternalPageStudiosArgs = {
   id_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   sort?: Maybe<Array<Maybe<StudioSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageMediaListArgs = {
@@ -785,7 +763,6 @@ export type InternalPageMediaListArgs = {
   sort?: Maybe<Array<Maybe<MediaListSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageAiringSchedulesArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -808,7 +785,6 @@ export type InternalPageAiringSchedulesArgs = {
   airingAt_lesser?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<AiringSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageMediaTrendsArgs = {
@@ -839,7 +815,6 @@ export type InternalPageMediaTrendsArgs = {
   sort?: Maybe<Array<Maybe<MediaTrendSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageNotificationsArgs = {
   type?: Maybe<NotificationType>;
@@ -847,20 +822,17 @@ export type InternalPageNotificationsArgs = {
   type_in?: Maybe<Array<Maybe<NotificationType>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageFollowersArgs = {
   userId: Scalars['Int'];
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageFollowingArgs = {
   userId: Scalars['Int'];
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageActivitiesArgs = {
@@ -893,13 +865,11 @@ export type InternalPageActivitiesArgs = {
   sort?: Maybe<Array<Maybe<ActivitySort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageActivityRepliesArgs = {
   id?: Maybe<Scalars['Int']>;
   activityId?: Maybe<Scalars['Int']>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageThreadsArgs = {
@@ -914,7 +884,6 @@ export type InternalPageThreadsArgs = {
   sort?: Maybe<Array<Maybe<ThreadSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageThreadCommentsArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -922,7 +891,6 @@ export type InternalPageThreadCommentsArgs = {
   userId?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<ThreadCommentSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageReviewsArgs = {
@@ -932,7 +900,6 @@ export type InternalPageReviewsArgs = {
   mediaType?: Maybe<MediaType>;
   sort?: Maybe<Array<Maybe<ReviewSort>>>;
 };
-
 
 /** Page of data (Used for internal use only) */
 export type InternalPageRecommendationsArgs = {
@@ -947,24 +914,28 @@ export type InternalPageRecommendationsArgs = {
   sort?: Maybe<Array<Maybe<RecommendationSort>>>;
 };
 
-
 /** Page of data (Used for internal use only) */
 export type InternalPageLikesArgs = {
   likeableId?: Maybe<Scalars['Int']>;
   type?: Maybe<LikeableType>;
 };
 
-
 /** Types that can be liked */
 export enum LikeableType {
   Thread = 'THREAD',
   ThreadComment = 'THREAD_COMMENT',
   Activity = 'ACTIVITY',
-  ActivityReply = 'ACTIVITY_REPLY'
+  ActivityReply = 'ACTIVITY_REPLY',
 }
 
 /** Likeable union type */
-export type LikeableUnion = ListActivity | TextActivity | MessageActivity | ActivityReply | Thread | ThreadComment;
+export type LikeableUnion =
+  | ListActivity
+  | TextActivity
+  | MessageActivity
+  | ActivityReply
+  | Thread
+  | ThreadComment;
 
 /** User list activity (anime & manga updates) */
 export type ListActivity = {
@@ -1120,18 +1091,15 @@ export type Media = {
   modNotes?: Maybe<Scalars['String']>;
 };
 
-
 /** Anime or Manga */
 export type MediaDescriptionArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
 };
 
-
 /** Anime or Manga */
 export type MediaSourceArgs = {
   version?: Maybe<Scalars['Int']>;
 };
-
 
 /** Anime or Manga */
 export type MediaCharactersArgs = {
@@ -1141,7 +1109,6 @@ export type MediaCharactersArgs = {
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 /** Anime or Manga */
 export type MediaStaffArgs = {
   sort?: Maybe<Array<Maybe<StaffSort>>>;
@@ -1149,13 +1116,11 @@ export type MediaStaffArgs = {
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 /** Anime or Manga */
 export type MediaStudiosArgs = {
   sort?: Maybe<Array<Maybe<StudioSort>>>;
   isMain?: Maybe<Scalars['Boolean']>;
 };
-
 
 /** Anime or Manga */
 export type MediaAiringScheduleArgs = {
@@ -1163,7 +1128,6 @@ export type MediaAiringScheduleArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 /** Anime or Manga */
 export type MediaTrendsArgs = {
@@ -1173,7 +1137,6 @@ export type MediaTrendsArgs = {
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 /** Anime or Manga */
 export type MediaReviewsArgs = {
   limit?: Maybe<Scalars['Int']>;
@@ -1181,7 +1144,6 @@ export type MediaReviewsArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 /** Anime or Manga */
 export type MediaRecommendationsArgs = {
@@ -1245,12 +1207,10 @@ export type MediaEdge = {
   favouriteOrder?: Maybe<Scalars['Int']>;
 };
 
-
 /** Media connection edge */
 export type MediaEdgeRelationTypeArgs = {
   version?: Maybe<Scalars['Int']>;
 };
-
 
 /** Media connection edge */
 export type MediaEdgeVoiceActorsArgs = {
@@ -1304,7 +1264,7 @@ export enum MediaFormat {
   /** Written books released as a series of light novels */
   Novel = 'NOVEL',
   /** Manga with just one chapter */
-  OneShot = 'ONE_SHOT'
+  OneShot = 'ONE_SHOT',
 }
 
 /** List of anime or manga */
@@ -1350,12 +1310,10 @@ export type MediaList = {
   user?: Maybe<User>;
 };
 
-
 /** List of anime or manga */
 export type MediaListScoreArgs = {
   format?: Maybe<ScoreFormat>;
 };
-
 
 /** List of anime or manga */
 export type MediaListCustomListsArgs = {
@@ -1383,12 +1341,10 @@ export type MediaListCollection = {
   customLists?: Maybe<Array<Maybe<Array<Maybe<MediaList>>>>>;
 };
 
-
 /** List of anime or manga */
 export type MediaListCollectionStatusListsArgs = {
   asArray?: Maybe<Scalars['Boolean']>;
 };
-
 
 /** List of anime or manga */
 export type MediaListCollectionCustomListsArgs = {
@@ -1478,7 +1434,7 @@ export enum MediaListSort {
   MediaTitleNative = 'MEDIA_TITLE_NATIVE',
   MediaTitleNativeDesc = 'MEDIA_TITLE_NATIVE_DESC',
   MediaPopularity = 'MEDIA_POPULARITY',
-  MediaPopularityDesc = 'MEDIA_POPULARITY_DESC'
+  MediaPopularityDesc = 'MEDIA_POPULARITY_DESC',
 }
 
 /** Media list watching/reading status enum. */
@@ -1494,7 +1450,7 @@ export enum MediaListStatus {
   /** Paused watching/reading */
   Paused = 'PAUSED',
   /** Re-watching/reading */
-  Repeating = 'REPEATING'
+  Repeating = 'REPEATING',
 }
 
 /** A user's list options for anime or manga lists */
@@ -1543,7 +1499,7 @@ export enum MediaRankType {
   /** Ranking is based on the media's ratings/score */
   Rated = 'RATED',
   /** Ranking is based on the media's popularity */
-  Popular = 'POPULAR'
+  Popular = 'POPULAR',
 }
 
 /** Type of relation media has to its parent. */
@@ -1573,7 +1529,7 @@ export enum MediaRelation {
   /** Version 2 only. */
   Compilation = 'COMPILATION',
   /** Version 2 only. */
-  Contains = 'CONTAINS'
+  Contains = 'CONTAINS',
 }
 
 export enum MediaSeason {
@@ -1584,7 +1540,7 @@ export enum MediaSeason {
   /** Months June to August */
   Summer = 'SUMMER',
   /** Months September to November */
-  Fall = 'FALL'
+  Fall = 'FALL',
 }
 
 /** Media sort enums */
@@ -1625,7 +1581,7 @@ export enum MediaSort {
   UpdatedAtDesc = 'UPDATED_AT_DESC',
   SearchMatch = 'SEARCH_MATCH',
   Favourites = 'FAVOURITES',
-  FavouritesDesc = 'FAVOURITES_DESC'
+  FavouritesDesc = 'FAVOURITES_DESC',
 }
 
 /** Source type the media was adapted from */
@@ -1647,7 +1603,7 @@ export enum MediaSource {
   /** Version 2 only. Self-published works */
   Doujinshi = 'DOUJINSHI',
   /** Version 2 only. Japanese Anime */
-  Anime = 'ANIME'
+  Anime = 'ANIME',
 }
 
 /** A media's statistics */
@@ -1668,7 +1624,7 @@ export enum MediaStatus {
   /** To be released at a later date */
   NotYetReleased = 'NOT_YET_RELEASED',
   /** Ended before the work could be finished */
-  Cancelled = 'CANCELLED'
+  Cancelled = 'CANCELLED',
 }
 
 /** Data and links to legal streaming episodes on external sites */
@@ -1767,18 +1723,15 @@ export type MediaTitle = {
   userPreferred?: Maybe<Scalars['String']>;
 };
 
-
 /** The official titles of the media in various languages */
 export type MediaTitleRomajiArgs = {
   stylised?: Maybe<Scalars['Boolean']>;
 };
 
-
 /** The official titles of the media in various languages */
 export type MediaTitleEnglishArgs = {
   stylised?: Maybe<Scalars['Boolean']>;
 };
-
 
 /** The official titles of the media in various languages */
 export type MediaTitleNativeArgs = {
@@ -1858,7 +1811,7 @@ export enum MediaTrendSort {
   Trending = 'TRENDING',
   TrendingDesc = 'TRENDING_DESC',
   Episode = 'EPISODE',
-  EpisodeDesc = 'EPISODE_DESC'
+  EpisodeDesc = 'EPISODE_DESC',
 }
 
 /** Media type enum, anime or manga. */
@@ -1866,7 +1819,7 @@ export enum MediaType {
   /** Japanese Anime */
   Anime = 'ANIME',
   /** Asian comic */
-  Manga = 'MANGA'
+  Manga = 'MANGA',
 }
 
 /** User message activity */
@@ -1908,7 +1861,6 @@ export type MessageActivity = {
   likes?: Maybe<Array<Maybe<User>>>;
 };
 
-
 /** User message activity */
 export type MessageActivityMessageArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
@@ -1935,7 +1887,7 @@ export enum ModActionType {
   Expire = 'EXPIRE',
   Report = 'REPORT',
   Reset = 'RESET',
-  Anon = 'ANON'
+  Anon = 'ANON',
 }
 
 export type Mutation = {
@@ -1998,7 +1950,6 @@ export type Mutation = {
   UpdateAniChartHighlights?: Maybe<Scalars['Json']>;
 };
 
-
 export type MutationUpdateUserArgs = {
   about?: Maybe<Scalars['String']>;
   titleLanguage?: Maybe<UserTitleLanguage>;
@@ -2012,7 +1963,6 @@ export type MutationUpdateUserArgs = {
   animeListOptions?: Maybe<MediaListOptionsInput>;
   mangaListOptions?: Maybe<MediaListOptionsInput>;
 };
-
 
 export type MutationSaveMediaListEntryArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2033,7 +1983,6 @@ export type MutationSaveMediaListEntryArgs = {
   completedAt?: Maybe<FuzzyDateInput>;
 };
 
-
 export type MutationUpdateMediaListEntriesArgs = {
   status?: Maybe<MediaListStatus>;
   score?: Maybe<Scalars['Float']>;
@@ -2051,24 +2000,20 @@ export type MutationUpdateMediaListEntriesArgs = {
   ids?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-
 export type MutationDeleteMediaListEntryArgs = {
   id?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationDeleteCustomListArgs = {
   customList?: Maybe<Scalars['String']>;
   type?: Maybe<MediaType>;
 };
 
-
 export type MutationSaveTextActivityArgs = {
   id?: Maybe<Scalars['Int']>;
   text?: Maybe<Scalars['String']>;
   locked?: Maybe<Scalars['Boolean']>;
 };
-
 
 export type MutationSaveMessageActivityArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2079,23 +2024,19 @@ export type MutationSaveMessageActivityArgs = {
   asMod?: Maybe<Scalars['Boolean']>;
 };
 
-
 export type MutationSaveListActivityArgs = {
   id?: Maybe<Scalars['Int']>;
   locked?: Maybe<Scalars['Boolean']>;
 };
 
-
 export type MutationDeleteActivityArgs = {
   id?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationToggleActivitySubscriptionArgs = {
   activityId?: Maybe<Scalars['Int']>;
   subscribe?: Maybe<Scalars['Boolean']>;
 };
-
 
 export type MutationSaveActivityReplyArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2104,28 +2045,23 @@ export type MutationSaveActivityReplyArgs = {
   asMod?: Maybe<Scalars['Boolean']>;
 };
 
-
 export type MutationDeleteActivityReplyArgs = {
   id?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationToggleLikeArgs = {
   id?: Maybe<Scalars['Int']>;
   type?: Maybe<LikeableType>;
 };
 
-
 export type MutationToggleLikeV2Args = {
   id?: Maybe<Scalars['Int']>;
   type?: Maybe<LikeableType>;
 };
 
-
 export type MutationToggleFollowArgs = {
   userId?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationToggleFavouriteArgs = {
   animeId?: Maybe<Scalars['Int']>;
@@ -2134,7 +2070,6 @@ export type MutationToggleFavouriteArgs = {
   staffId?: Maybe<Scalars['Int']>;
   studioId?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationUpdateFavouriteOrderArgs = {
   animeIds?: Maybe<Array<Maybe<Scalars['Int']>>>;
@@ -2149,7 +2084,6 @@ export type MutationUpdateFavouriteOrderArgs = {
   studioOrder?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-
 export type MutationSaveReviewArgs = {
   id?: Maybe<Scalars['Int']>;
   mediaId?: Maybe<Scalars['Int']>;
@@ -2159,24 +2093,20 @@ export type MutationSaveReviewArgs = {
   private?: Maybe<Scalars['Boolean']>;
 };
 
-
 export type MutationDeleteReviewArgs = {
   id?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationRateReviewArgs = {
   reviewId?: Maybe<Scalars['Int']>;
   rating?: Maybe<ReviewRating>;
 };
 
-
 export type MutationSaveRecommendationArgs = {
   mediaId?: Maybe<Scalars['Int']>;
   mediaRecommendationId?: Maybe<Scalars['Int']>;
   rating?: Maybe<RecommendationRating>;
 };
-
 
 export type MutationSaveThreadArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2188,17 +2118,14 @@ export type MutationSaveThreadArgs = {
   locked?: Maybe<Scalars['Boolean']>;
 };
 
-
 export type MutationDeleteThreadArgs = {
   id?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationToggleThreadSubscriptionArgs = {
   threadId?: Maybe<Scalars['Int']>;
   subscribe?: Maybe<Scalars['Boolean']>;
 };
-
 
 export type MutationSaveThreadCommentArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2207,11 +2134,9 @@ export type MutationSaveThreadCommentArgs = {
   comment?: Maybe<Scalars['String']>;
 };
 
-
 export type MutationDeleteThreadCommentArgs = {
   id?: Maybe<Scalars['Int']>;
 };
-
 
 export type MutationUpdateAniChartSettingsArgs = {
   titleLanguage?: Maybe<Scalars['String']>;
@@ -2219,7 +2144,6 @@ export type MutationUpdateAniChartSettingsArgs = {
   theme?: Maybe<Scalars['String']>;
   sort?: Maybe<Scalars['String']>;
 };
-
 
 export type MutationUpdateAniChartHighlightsArgs = {
   highlights?: Maybe<Array<Maybe<AniChartHighlightInput>>>;
@@ -2271,11 +2195,25 @@ export enum NotificationType {
   /** A user has replied to activity you have also replied to */
   ActivityReplySubscribed = 'ACTIVITY_REPLY_SUBSCRIBED',
   /** A new anime or manga has been added to the site where its related media is on the user's list */
-  RelatedMediaAddition = 'RELATED_MEDIA_ADDITION'
+  RelatedMediaAddition = 'RELATED_MEDIA_ADDITION',
 }
 
 /** Notification union type */
-export type NotificationUnion = AiringNotification | FollowingNotification | ActivityMessageNotification | ActivityMentionNotification | ActivityReplyNotification | ActivityReplySubscribedNotification | ActivityLikeNotification | ActivityReplyLikeNotification | ThreadCommentMentionNotification | ThreadCommentReplyNotification | ThreadCommentSubscribedNotification | ThreadCommentLikeNotification | ThreadLikeNotification | RelatedMediaAdditionNotification;
+export type NotificationUnion =
+  | AiringNotification
+  | FollowingNotification
+  | ActivityMessageNotification
+  | ActivityMentionNotification
+  | ActivityReplyNotification
+  | ActivityReplySubscribedNotification
+  | ActivityLikeNotification
+  | ActivityReplyLikeNotification
+  | ThreadCommentMentionNotification
+  | ThreadCommentReplyNotification
+  | ThreadCommentSubscribedNotification
+  | ThreadCommentLikeNotification
+  | ThreadLikeNotification
+  | RelatedMediaAdditionNotification;
 
 /** Page of data */
 export type Page = {
@@ -2302,7 +2240,6 @@ export type Page = {
   likes?: Maybe<Array<Maybe<User>>>;
 };
 
-
 /** Page of data */
 export type PageUsersArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2310,7 +2247,6 @@ export type PageUsersArgs = {
   search?: Maybe<Scalars['String']>;
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
-
 
 /** Page of data */
 export type PageMediaArgs = {
@@ -2382,7 +2318,6 @@ export type PageMediaArgs = {
   sort?: Maybe<Array<Maybe<MediaSort>>>;
 };
 
-
 /** Page of data */
 export type PageCharactersArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2392,7 +2327,6 @@ export type PageCharactersArgs = {
   id_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   sort?: Maybe<Array<Maybe<CharacterSort>>>;
 };
-
 
 /** Page of data */
 export type PageStaffArgs = {
@@ -2404,7 +2338,6 @@ export type PageStaffArgs = {
   sort?: Maybe<Array<Maybe<StaffSort>>>;
 };
 
-
 /** Page of data */
 export type PageStudiosArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2414,7 +2347,6 @@ export type PageStudiosArgs = {
   id_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   sort?: Maybe<Array<Maybe<StudioSort>>>;
 };
-
 
 /** Page of data */
 export type PageMediaListArgs = {
@@ -2445,7 +2377,6 @@ export type PageMediaListArgs = {
   sort?: Maybe<Array<Maybe<MediaListSort>>>;
 };
 
-
 /** Page of data */
 export type PageAiringSchedulesArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2468,7 +2399,6 @@ export type PageAiringSchedulesArgs = {
   airingAt_lesser?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<AiringSort>>>;
 };
-
 
 /** Page of data */
 export type PageMediaTrendsArgs = {
@@ -2499,7 +2429,6 @@ export type PageMediaTrendsArgs = {
   sort?: Maybe<Array<Maybe<MediaTrendSort>>>;
 };
 
-
 /** Page of data */
 export type PageNotificationsArgs = {
   type?: Maybe<NotificationType>;
@@ -2507,20 +2436,17 @@ export type PageNotificationsArgs = {
   type_in?: Maybe<Array<Maybe<NotificationType>>>;
 };
 
-
 /** Page of data */
 export type PageFollowersArgs = {
   userId: Scalars['Int'];
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
 
-
 /** Page of data */
 export type PageFollowingArgs = {
   userId: Scalars['Int'];
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
-
 
 /** Page of data */
 export type PageActivitiesArgs = {
@@ -2553,13 +2479,11 @@ export type PageActivitiesArgs = {
   sort?: Maybe<Array<Maybe<ActivitySort>>>;
 };
 
-
 /** Page of data */
 export type PageActivityRepliesArgs = {
   id?: Maybe<Scalars['Int']>;
   activityId?: Maybe<Scalars['Int']>;
 };
-
 
 /** Page of data */
 export type PageThreadsArgs = {
@@ -2574,7 +2498,6 @@ export type PageThreadsArgs = {
   sort?: Maybe<Array<Maybe<ThreadSort>>>;
 };
 
-
 /** Page of data */
 export type PageThreadCommentsArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2582,7 +2505,6 @@ export type PageThreadCommentsArgs = {
   userId?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<ThreadCommentSort>>>;
 };
-
 
 /** Page of data */
 export type PageReviewsArgs = {
@@ -2592,7 +2514,6 @@ export type PageReviewsArgs = {
   mediaType?: Maybe<MediaType>;
   sort?: Maybe<Array<Maybe<ReviewSort>>>;
 };
-
 
 /** Page of data */
 export type PageRecommendationsArgs = {
@@ -2606,7 +2527,6 @@ export type PageRecommendationsArgs = {
   rating_lesser?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<RecommendationSort>>>;
 };
-
 
 /** Page of data */
 export type PageLikesArgs = {
@@ -2692,12 +2612,10 @@ export type Query = {
   SiteStatistics?: Maybe<SiteStatistics>;
 };
 
-
 export type QueryPageArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryMediaArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2768,7 +2686,6 @@ export type QueryMediaArgs = {
   sort?: Maybe<Array<Maybe<MediaSort>>>;
 };
 
-
 export type QueryMediaTrendArgs = {
   mediaId?: Maybe<Scalars['Int']>;
   date?: Maybe<Scalars['Int']>;
@@ -2797,7 +2714,6 @@ export type QueryMediaTrendArgs = {
   sort?: Maybe<Array<Maybe<MediaTrendSort>>>;
 };
 
-
 export type QueryAiringScheduleArgs = {
   id?: Maybe<Scalars['Int']>;
   mediaId?: Maybe<Scalars['Int']>;
@@ -2820,7 +2736,6 @@ export type QueryAiringScheduleArgs = {
   sort?: Maybe<Array<Maybe<AiringSort>>>;
 };
 
-
 export type QueryCharacterArgs = {
   id?: Maybe<Scalars['Int']>;
   search?: Maybe<Scalars['String']>;
@@ -2830,7 +2745,6 @@ export type QueryCharacterArgs = {
   sort?: Maybe<Array<Maybe<CharacterSort>>>;
 };
 
-
 export type QueryStaffArgs = {
   id?: Maybe<Scalars['Int']>;
   search?: Maybe<Scalars['String']>;
@@ -2839,7 +2753,6 @@ export type QueryStaffArgs = {
   id_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   sort?: Maybe<Array<Maybe<StaffSort>>>;
 };
-
 
 export type QueryMediaListArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2869,7 +2782,6 @@ export type QueryMediaListArgs = {
   sort?: Maybe<Array<Maybe<MediaListSort>>>;
 };
 
-
 export type QueryMediaListCollectionArgs = {
   userId?: Maybe<Scalars['Int']>;
   userName?: Maybe<Scalars['String']>;
@@ -2894,11 +2806,9 @@ export type QueryMediaListCollectionArgs = {
   sort?: Maybe<Array<Maybe<MediaListSort>>>;
 };
 
-
 export type QueryMediaTagCollectionArgs = {
   status?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryUserArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2907,13 +2817,11 @@ export type QueryUserArgs = {
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
 
-
 export type QueryNotificationArgs = {
   type?: Maybe<NotificationType>;
   resetNotificationCount?: Maybe<Scalars['Boolean']>;
   type_in?: Maybe<Array<Maybe<NotificationType>>>;
 };
-
 
 export type QueryStudioArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2924,7 +2832,6 @@ export type QueryStudioArgs = {
   sort?: Maybe<Array<Maybe<StudioSort>>>;
 };
 
-
 export type QueryReviewArgs = {
   id?: Maybe<Scalars['Int']>;
   mediaId?: Maybe<Scalars['Int']>;
@@ -2932,7 +2839,6 @@ export type QueryReviewArgs = {
   mediaType?: Maybe<MediaType>;
   sort?: Maybe<Array<Maybe<ReviewSort>>>;
 };
-
 
 export type QueryActivityArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2964,24 +2870,20 @@ export type QueryActivityArgs = {
   sort?: Maybe<Array<Maybe<ActivitySort>>>;
 };
 
-
 export type QueryActivityReplyArgs = {
   id?: Maybe<Scalars['Int']>;
   activityId?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryFollowingArgs = {
   userId: Scalars['Int'];
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
 
-
 export type QueryFollowerArgs = {
   userId: Scalars['Int'];
   sort?: Maybe<Array<Maybe<UserSort>>>;
 };
-
 
 export type QueryThreadArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -2995,14 +2897,12 @@ export type QueryThreadArgs = {
   sort?: Maybe<Array<Maybe<ThreadSort>>>;
 };
 
-
 export type QueryThreadCommentArgs = {
   id?: Maybe<Scalars['Int']>;
   threadId?: Maybe<Scalars['Int']>;
   userId?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<ThreadCommentSort>>>;
 };
-
 
 export type QueryRecommendationArgs = {
   id?: Maybe<Scalars['Int']>;
@@ -3016,12 +2916,10 @@ export type QueryRecommendationArgs = {
   sort?: Maybe<Array<Maybe<RecommendationSort>>>;
 };
 
-
 export type QueryLikeArgs = {
   likeableId?: Maybe<Scalars['Int']>;
   type?: Maybe<LikeableType>;
 };
-
 
 export type QueryMarkdownArgs = {
   markdown: Scalars['String'];
@@ -3062,7 +2960,7 @@ export type RecommendationEdge = {
 export enum RecommendationRating {
   NoRating = 'NO_RATING',
   RateUp = 'RATE_UP',
-  RateDown = 'RATE_DOWN'
+  RateDown = 'RATE_DOWN',
 }
 
 /** Recommendation sort enums */
@@ -3070,7 +2968,7 @@ export enum RecommendationSort {
   Id = 'ID',
   IdDesc = 'ID_DESC',
   Rating = 'RATING',
-  RatingDesc = 'RATING_DESC'
+  RatingDesc = 'RATING_DESC',
 }
 
 /** Notification for when new media is added to the site */
@@ -3137,7 +3035,6 @@ export type Review = {
   media?: Maybe<Media>;
 };
 
-
 /** A Review that features in an anime or manga */
 export type ReviewBodyArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
@@ -3161,7 +3058,7 @@ export type ReviewEdge = {
 export enum ReviewRating {
   NoVote = 'NO_VOTE',
   UpVote = 'UP_VOTE',
-  DownVote = 'DOWN_VOTE'
+  DownVote = 'DOWN_VOTE',
 }
 
 /** Review sort enums */
@@ -3175,7 +3072,7 @@ export enum ReviewSort {
   CreatedAt = 'CREATED_AT',
   CreatedAtDesc = 'CREATED_AT_DESC',
   UpdatedAt = 'UPDATED_AT',
-  UpdatedAtDesc = 'UPDATED_AT_DESC'
+  UpdatedAtDesc = 'UPDATED_AT_DESC',
 }
 
 /** Feed of mod edit activity */
@@ -3204,7 +3101,7 @@ export type RevisionHistory = {
 /** Revision history actions */
 export enum RevisionHistoryAction {
   Create = 'CREATE',
-  Edit = 'EDIT'
+  Edit = 'EDIT',
 }
 
 /** A user's list score distribution. */
@@ -3226,7 +3123,7 @@ export enum ScoreFormat {
   /** An integer from 0-5. Should be represented in Stars */
   Point_5 = 'POINT_5',
   /** An integer from 0-3. Should be represented in Smileys. 0 => No Score, 1 => :(, 2 => :|, 3 => :) */
-  Point_3 = 'POINT_3'
+  Point_3 = 'POINT_3',
 }
 
 export type SiteStatistics = {
@@ -3240,13 +3137,11 @@ export type SiteStatistics = {
   reviews?: Maybe<SiteTrendConnection>;
 };
 
-
 export type SiteStatisticsUsersArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 export type SiteStatisticsAnimeArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
@@ -3254,13 +3149,11 @@ export type SiteStatisticsAnimeArgs = {
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 export type SiteStatisticsMangaArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 export type SiteStatisticsCharactersArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
@@ -3268,20 +3161,17 @@ export type SiteStatisticsCharactersArgs = {
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 export type SiteStatisticsStaffArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
 
-
 export type SiteStatisticsStudiosArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 export type SiteStatisticsReviewsArgs = {
   sort?: Maybe<Array<Maybe<SiteTrendSort>>>;
@@ -3320,7 +3210,7 @@ export enum SiteTrendSort {
   Count = 'COUNT',
   CountDesc = 'COUNT_DESC',
   Change = 'CHANGE',
-  ChangeDesc = 'CHANGE_DESC'
+  ChangeDesc = 'CHANGE_DESC',
 }
 
 /** Voice actors or production staff */
@@ -3360,12 +3250,10 @@ export type Staff = {
   modNotes?: Maybe<Scalars['String']>;
 };
 
-
 /** Voice actors or production staff */
 export type StaffDescriptionArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
 };
-
 
 /** Voice actors or production staff */
 export type StaffStaffMediaArgs = {
@@ -3374,7 +3262,6 @@ export type StaffStaffMediaArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
 };
-
 
 /** Voice actors or production staff */
 export type StaffCharactersArgs = {
@@ -3432,7 +3319,7 @@ export enum StaffLanguage {
   /** Hebrew */
   Hebrew = 'HEBREW',
   /** Hungarian */
-  Hungarian = 'HUNGARIAN'
+  Hungarian = 'HUNGARIAN',
 }
 
 /** The names of the staff member */
@@ -3472,7 +3359,7 @@ export enum StaffSort {
   LanguageDesc = 'LANGUAGE_DESC',
   SearchMatch = 'SEARCH_MATCH',
   Favourites = 'FAVOURITES',
-  FavouritesDesc = 'FAVOURITES_DESC'
+  FavouritesDesc = 'FAVOURITES_DESC',
 }
 
 /** User's staff statistics */
@@ -3532,7 +3419,6 @@ export type Studio = {
   favourites?: Maybe<Scalars['Int']>;
 };
 
-
 /** Animation or production company */
 export type StudioMediaArgs = {
   sort?: Maybe<Array<Maybe<MediaSort>>>;
@@ -3569,7 +3455,7 @@ export enum StudioSort {
   NameDesc = 'NAME_DESC',
   SearchMatch = 'SEARCH_MATCH',
   Favourites = 'FAVOURITES',
-  FavouritesDesc = 'FAVOURITES_DESC'
+  FavouritesDesc = 'FAVOURITES_DESC',
 }
 
 /** User's studio statistics */
@@ -3585,7 +3471,7 @@ export type StudioStats = {
 /** Submission sort enums */
 export enum SubmissionSort {
   Id = 'ID',
-  IdDesc = 'ID_DESC'
+  IdDesc = 'ID_DESC',
 }
 
 /** Submission status */
@@ -3593,7 +3479,7 @@ export enum SubmissionStatus {
   Pending = 'PENDING',
   Rejected = 'REJECTED',
   PartiallyAccepted = 'PARTIALLY_ACCEPTED',
-  Accepted = 'ACCEPTED'
+  Accepted = 'ACCEPTED',
 }
 
 /** User's tag statistics */
@@ -3638,7 +3524,6 @@ export type TextActivity = {
   /** The users who liked the activity */
   likes?: Maybe<Array<Maybe<User>>>;
 };
-
 
 /** User text activity */
 export type TextActivityTextArgs = {
@@ -3694,7 +3579,6 @@ export type Thread = {
   mediaCategories?: Maybe<Array<Maybe<Media>>>;
 };
 
-
 /** Forum Thread */
 export type ThreadBodyArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
@@ -3739,7 +3623,6 @@ export type ThreadComment = {
   /** The comment's child reply comments */
   childComments?: Maybe<Scalars['Json']>;
 };
-
 
 /** Forum Thread Comment */
 export type ThreadCommentCommentArgs = {
@@ -3818,7 +3701,7 @@ export type ThreadCommentReplyNotification = {
 /** Thread comments sort enums */
 export enum ThreadCommentSort {
   Id = 'ID',
-  IdDesc = 'ID_DESC'
+  IdDesc = 'ID_DESC',
 }
 
 /** Notification for when a user replies to a subscribed forum thread */
@@ -3884,7 +3767,7 @@ export enum ThreadSort {
   ViewCount = 'VIEW_COUNT',
   ViewCountDesc = 'VIEW_COUNT_DESC',
   IsSticky = 'IS_STICKY',
-  SearchMatch = 'SEARCH_MATCH'
+  SearchMatch = 'SEARCH_MATCH',
 }
 
 /** A user */
@@ -3934,12 +3817,10 @@ export type User = {
   stats?: Maybe<UserStats>;
 };
 
-
 /** A user */
 export type UserAboutArgs = {
   asHtml?: Maybe<Scalars['Boolean']>;
 };
-
 
 /** A user */
 export type UserFavouritesArgs = {
@@ -4060,7 +3941,7 @@ export enum UserSort {
   WatchedTimeDesc = 'WATCHED_TIME_DESC',
   ChaptersRead = 'CHAPTERS_READ',
   ChaptersReadDesc = 'CHAPTERS_READ_DESC',
-  SearchMatch = 'SEARCH_MATCH'
+  SearchMatch = 'SEARCH_MATCH',
 }
 
 export type UserStaffStatistic = {
@@ -4106,72 +3987,60 @@ export type UserStatistics = {
   studios?: Maybe<Array<Maybe<UserStudioStatistic>>>;
 };
 
-
 export type UserStatisticsFormatsArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
-
 
 export type UserStatisticsStatusesArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
 
-
 export type UserStatisticsScoresArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
-
 
 export type UserStatisticsLengthsArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
 
-
 export type UserStatisticsReleaseYearsArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
-
 
 export type UserStatisticsStartYearsArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
 
-
 export type UserStatisticsGenresArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
-
 
 export type UserStatisticsTagsArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
 
-
 export type UserStatisticsCountriesArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
-
 
 export type UserStatisticsVoiceActorsArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
 
-
 export type UserStatisticsStaffArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<Array<Maybe<UserStatisticsSort>>>;
 };
-
 
 export type UserStatisticsStudiosArgs = {
   limit?: Maybe<Scalars['Int']>;
@@ -4187,7 +4056,7 @@ export enum UserStatisticsSort {
   Progress = 'PROGRESS',
   ProgressDesc = 'PROGRESS_DESC',
   MeanScore = 'MEAN_SCORE',
-  MeanScoreDesc = 'MEAN_SCORE_DESC'
+  MeanScoreDesc = 'MEAN_SCORE_DESC',
 }
 
 export type UserStatisticTypes = {
@@ -4263,7 +4132,7 @@ export enum UserTitleLanguage {
   /** The official english title, stylised by media creator */
   EnglishStylised = 'ENGLISH_STYLISED',
   /** Official title in it's native language, stylised by media creator */
-  NativeStylised = 'NATIVE_STYLISED'
+  NativeStylised = 'NATIVE_STYLISED',
 }
 
 export type UserVoiceActorStatistic = {
