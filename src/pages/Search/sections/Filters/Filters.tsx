@@ -19,7 +19,7 @@ import { filters } from './filters-data';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
 `;
 
@@ -28,17 +28,10 @@ const Filters: FC<{
   sendEvent: Interpreter<Context, any, Events>['send'];
 }> = ({ filterSelected, sendEvent }) => {
   const onChangeFilter = filterKey => (_, value) => {
-    if (filterKey === 'format') {
-      sendEvent({
-        type: EVENT_TYPE.SET_FORMAT,
-        value,
-      });
-    } else {
-      sendEvent({
-        type: `SET_${filterKey.toUpperCase()}` as EVENT_TYPE,
-        value,
-      });
-    }
+    sendEvent({
+      type: `SET_${filterKey.toUpperCase()}` as EVENT_TYPE,
+      value,
+    });
   };
 
   return (
@@ -48,8 +41,9 @@ const Filters: FC<{
 
         return (
           <Autocomplete
-            key={filter.key}
             multiple={isFormatFilter}
+            limitTags={1}
+            key={filter.key}
             options={filter.values}
             getOptionLabel={option => option.label}
             defaultValue={isFormatFilter ? [] : undefined}

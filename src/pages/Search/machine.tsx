@@ -1,5 +1,12 @@
 import { Machine, assign } from 'xstate';
 
+enum FILTER_QUERY_STRINGS_KEY {
+  GENRE = 'genre',
+  YEAR = 'year',
+  SEASON = 'season',
+  FORMAT = 'format',
+}
+
 type FilterValue = {
   label: string;
   value: string;
@@ -68,19 +75,16 @@ const machine = Machine<Context, Schema, Events>(
     },
     on: {
       SET_GENRE: {
-        actions: ['setGenre'],
+        actions: ['setGenre', 'updateUrlSearchParams'],
       },
       SET_YEAR: {
-        actions: ['setYear'],
+        actions: ['setYear', 'updateUrlSearchParams'],
       },
       SET_SEASON: {
-        actions: ['setSeason'],
+        actions: ['setSeason', 'updateUrlSearchParams'],
       },
       SET_FORMAT: {
-        actions: ['setFormat'],
-      },
-      CLEAR_FORMAT: {
-        actions: ['clearFormat'],
+        actions: ['setFormat', 'updateUrlSearchParams'],
       },
     },
   },
@@ -112,15 +116,45 @@ const machine = Machine<Context, Schema, Events>(
         season: (context, event) => event.value as FilterValue,
       }),
       setFormat: assign({
-        format: (context, event) => event.value as FilterValue[],
+        format: (context, event) => (event.value as FilterValue[]) || [],
       }),
-      clearFormat: assign({
-        format: [],
-      }),
-      // clearFormat: assign({
-      //   format: (context, event) =>
-      //     context.format.filter(f => f !== event.value),
-      // }),
+      updateUrlSearchParams: (context, event) => {
+        console.log({ context, event });
+        const searchParams = new URLSearchParams(window.location.search);
+
+        if (context.season) {
+          searchParams.set(
+            FILTER_QUERY_STRINGS_KEY.SEASON,
+            context.season.value,
+          );
+        } else {
+          searchParams.delete(FILTER_QUERY_STRINGS_KEY.YEAR);
+        }
+
+        if (context.year) {
+          searchParams.set(FILTER_QUERY_STRINGS_KEY.YEAR, context.year.value);
+        } else {
+          searchParams.delete(FILTER_QUERY_STRINGS_KEY.YEAR);
+        }
+
+        if (context.format.length > 0) {
+          const queryValue = context.format
+            .map(format => format.value)
+            .join('+');
+
+          searchParams.set(FILTER_QUERY_STRINGS_KEY.FORMAT, queryValue);
+        } else {
+          searchParams.delete(FILTER_QUERY_STRINGS_KEY.FORMAT);
+        }
+
+        console.log({ searchparams: searchParams.toString() });
+
+        window.history.replaceState(
+          {},
+          '',
+          `${window.location.pathname}?${searchParams.toString()}`,
+        );
+      },
     },
   },
 );
